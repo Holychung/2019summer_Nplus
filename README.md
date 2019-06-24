@@ -1,68 +1,102 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ReactJS Github API 
+===
+- NCTU+ 2019 暑訓
 
-## Available Scripts
+![](https://i.imgur.com/chUmegf.png)
 
-In the project directory, you can run:
 
-### `npm start`
+- API intro + JSON format + Restful
+https://medium.com/pyladies-taiwan/%E7%88%AC%E8%9F%B2-%E5%BE%9Edcard%E7%B6%B2%E7%AB%99%E7%9C%8B%E7%88%AC%E8%9F%B2%E5%85%A5%E9%96%80-ii-91e2357b82c6
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- yarn install 
+https://yarnpkg.com/lang/zh-hant/docs/install/#mac-stable
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+- yarn create react-app your_app_name
+cd your_app_name
+yarn start
 
-### `npm test`
+- yarn add react-router-dom
+教學
+http://www.ucamc.com/e-learning/javascript/278-%E7%B0%A1%E5%96%AE%E4%BB%8B%E7%B4%B9%E4%BA%86%E8%A7%A3react-router-4%E6%95%99%E5%AD%B8.html
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- NavBar
+```jsx=
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <BrowserRouter>
+          <Route path='/' component={ NavBar }/>
+          <Switch>
+            <Route exact path='/' component={ Home }/>
+            <Route path='/search' component={ SearchPage }/>
+            <Route component={ NotFound } />
+          </Switch>
+        </BrowserRouter>
+      </div>
+    )
+  }
+}
+```
 
-### `npm run build`
+- B4
+https://getbootstrap.com/docs/4.1/getting-started/introduction/
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+```jsx=
+class NavBar extends React.Component {
+  render(){
+    return(
+      <div className="container p-3">
+      	<div className="row justify-content-center">
+	        <Link to='/' className="mx-3">Home</Link>
+	        <Link to='/search'>Search</Link>
+      	</div>
+      </div>
+    )
+  }
+}
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+// dropdown
+```jsx=
+<div className="dropdown">
+  <a className="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    {this.state.dropdownTitle}
+  </a>
 
-### `npm run eject`
+  <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <a className="dropdown-item" onClick={()=>this.onClickDropDown('遊戲')}>遊戲</a>
+    <a className="dropdown-item" onClick={()=>this.onClickDropDown('寵物')}>寵物</a>
+    <a className="dropdown-item" onClick={()=>this.onClickDropDown('心情')}>心情</a>
+  </div>
+</div>
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+input 
+```jsx=
+<div className="input-group mb-3">
+  <input type="text" 
+    className="form-control" 
+    placeholder="Type github username" 
+    aria-label="Recipient's username" 
+    aria-describedby="button-addon2" 
+    onChange={(e) => this.changeSearchWord(e.target.value)}
+    />
+  <div className="input-group-append">
+    <button className="btn btn-outline-secondary" 
+      type="button" 
+      id="button-addon2"
+      onClick={() => this.props.onFetchData(this.state.searchWord)}
+      >Button</button>
+  </div>
+</div>
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- github api
+https://developer.github.com/v3/repos/#list-user-repositories
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- yarn add axios
+axios GET 
+https://github.com/axios/axios
