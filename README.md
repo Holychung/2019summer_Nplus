@@ -7,8 +7,10 @@ ReactJS Github API
 ![](https://i.imgur.com/FjHG0PE.png)
 
 
-- API intro + JSON format + Restful
+- API intro + JSON format
 https://medium.com/pyladies-taiwan/%E7%88%AC%E8%9F%B2-%E5%BE%9Edcard%E7%B6%B2%E7%AB%99%E7%9C%8B%E7%88%AC%E8%9F%B2%E5%85%A5%E9%96%80-ii-91e2357b82c6
+- Restful API
+https://ithelp.ithome.com.tw/articles/10157431
 
 - yarn install 
 https://yarnpkg.com/lang/zh-hant/docs/install/#mac-stable
