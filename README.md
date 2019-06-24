@@ -6,6 +6,7 @@ ReactJS Github API
 ---
 ![](https://i.imgur.com/FjHG0PE.png)
 
+
 - API intro + JSON format + Restful
 https://medium.com/pyladies-taiwan/%E7%88%AC%E8%9F%B2-%E5%BE%9Edcard%E7%B6%B2%E7%AB%99%E7%9C%8B%E7%88%AC%E8%9F%B2%E5%85%A5%E9%96%80-ii-91e2357b82c6
 
@@ -20,7 +21,12 @@ yarn start
 教學
 http://www.ucamc.com/e-learning/javascript/278-%E7%B0%A1%E5%96%AE%E4%BB%8B%E7%B4%B9%E4%BA%86%E8%A7%A3react-router-4%E6%95%99%E5%AD%B8.html
 
-- NavBar
+### React Router
+- import module
+```javascript=
+import React from 'react'
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom'
+```
 ```jsx=
 class App extends React.Component {
   render() {
@@ -40,7 +46,7 @@ class App extends React.Component {
 }
 ```
 
-- B4
+### Bootstrap 4
 https://getbootstrap.com/docs/4.1/getting-started/introduction/
 
 
@@ -74,7 +80,7 @@ class NavBar extends React.Component {
 </div>
 ```
 
-input 
+- input 
 ```jsx=
 <div className="input-group mb-3">
   <input type="text" 
@@ -94,10 +100,12 @@ input
 </div>
 ```
 
-- github api
+### github api
 https://developer.github.com/v3/repos/#list-user-repositories
 
 
-- yarn add axios
+### yarn add axios
 axios GET 
 https://github.com/axios/axios
+
+### Thanks!
